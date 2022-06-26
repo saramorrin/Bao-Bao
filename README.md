@@ -1,108 +1,129 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Introduction
 
-Welcome saramorrin,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+A live website can be found here
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Website Preview
 
-## Gitpod Reminders
+# 1. UX
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+1.1. Strategy
+Project Goals
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+User Goals:
+First Time Visitor Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+User Stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+1.2. Structure
+1.3. Skeleton
+Wireframes
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+1.4. Surface
+# 2. Features
+# 3. Technologies Used
+HTML5
+The project uses HyperText Markup Language.
+CSS3
+The project uses Cascading Style Sheets.
+JavaScript
+The project uses JavaScript.
+Python
+The project uses Python.
+Boostrap 5
+The project uses Bootstrap 5.
+PostgreSQL
+The project uses PostgreSQL as a database.
+Gitpod
+The project uses Gitpod.
+Chrome
+The project uses Chrome to debug and test the source code using HTML5.
+Balsamiq
+Balsamiq was used to create the wireframes during the design process.
+Google Fonts
+Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
+GitHub
+GitHub was used to store the project's code after being pushed from Git.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# 4. Testing
 
-------
+# 5. Development Cycle
+Project Checklist
+Install Django and the supporting libraries
+Install Django and Gunicorn. Gunicorn is the server I am using to run Django on Heroku.
+Install support libraries including psycopg2, this is used to connect the PostgreSQL database
+Install Cloudinary libraries, this is a host provider service that stores images
+Create the requirements.txt file. This includes the project's dependencies allowing us to run the project in Heroku.
+Create a new, blank Django Project
+Create a new project
+Create the app
+Add restaurant_booking to the installed apps in settings.py
+Migrate all new changes to the database
+Run the server to test
+Setup project to use Cloudinary and PostgreSQL
+Create new Heroku app
+Sign into Heroku
+Select New
+Select create new app
+Enter a relevant app name
+Select appropriate region
+Select the create app button
+Attach PostgreSQL database
+In Heroku go to resources
+Search for Postgres in the add-ons box
+Select Heroku Postgres
+Submit order form
+Prepare the environment and settings.py file
+Create env.py file
+Add DATABASE_URL with the Postgres URL from Heroku
+Add SECRET_KEY with a randomly generated key
+Add SECRET_KEY and generated key to the config vars in Heroku
+Add if statement to settings.py to prevent the production server from erroring
+Replace insecure key with the environment variable for the SECRET_KEY
+Add Heroku database as the back end
+Migrate changes to new database
+Get static media files stored on Cloudinary
+Create a Cloudinary account
+From the dashboard, copy the API Environment variable
+In the settings.py file create a new environment variable for CLOUDINARY_URL
+Add the CLOUDINARY_URL variable to Heroku
+Add a temporary config var for DISABLE_COLLECTSTATIC
+In settings.py add Cloudinary as an installed app
+Add static and media file variables
+Add templates directory
+Change DIR's key to point to TEMPALTES_DIR
+Add Heroku hostname to allowed hosts
+Create directories for media, static and templates in the project workspace
+Create a Procfile
+Deploy new empty project to Heroku
+Deployed Heroku
 
-## Release History
+# 6. Deployment
+I used the terminal to deploy my project locally. To do this I had to:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Create a repository on GitHub.
+Clone the repository on your chosen source code editor (GitPod in my case) using the clone link.
+Open the terminal within GitPod
+Enter "python3 manage.py runserver into the terminal.
+Go to local host address on my web browser.
+All locally saved changes will show up here.
+For the final deployment to Heroku, I had to:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Uncomment the PostgreSQL databse from my settings.py file.
+Set debug = False in my settings.py file.
+Commit and push all files to GitHub
+In Heroku, remove the DISABLE_COLLECTSTATIC config var.
+In the deploy tab, go to the manual deploy sections and click deploy branch.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+# 7. End Product
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+# 8. Known Bugs
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+# 9. Credits
+Cloudinary for image urls
