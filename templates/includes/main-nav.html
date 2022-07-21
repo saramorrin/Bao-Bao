@@ -5,10 +5,9 @@
                 Savoury
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="savoury-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item">All Savoury Baos</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?category=savoury" class="dropdown-item">Meat</a>
+                <a href="{% url 'products' %}?category=by_rating" class="dropdown-item ">Veggie</a>
+                <a href="{% url 'products' %}?category=meat, veggie" class="dropdown-item">All Savoury Baos</a>
             </div>
         </li>
 
